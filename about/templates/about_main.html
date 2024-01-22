@@ -1,0 +1,45 @@
+{% extends 'about.html' %}
+
+{% block content %}
+    {% include 'about_header.html' %}
+    <section class="section text-center">
+            <div class="container">
+                {% for about_info in about_infos %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="{{ about_info.photo.url }}" alt="about-img" class="img-fluid img-thumbnail margin-t-30">
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-title">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3><span>What is our cliesnts say?</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'client.html' %}
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-title">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2><span>Meet the Team</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'team.html' %}
+
+            </div> <!-- end container -->
+        </section>
+{% endblock %}

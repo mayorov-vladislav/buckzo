@@ -1,0 +1,11 @@
+<div class="row">
+    {% for team in teams %}
+                    <div class="col-lg-4">
+                        <div class="team-box">
+                            <img src="{{ team.photo.url }}" class="img-fluid rounded" alt="">
+                            <h4>{{ team.name }}</h4>
+                            <h6 class="text-muted">{{ team.post }}</h6>
+                        </div>
+                    </div>
+    {% endfor %}
+</div>

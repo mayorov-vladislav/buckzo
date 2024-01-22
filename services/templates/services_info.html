@@ -1,0 +1,17 @@
+<section class="margin-t-30">
+            <div class="container">
+                <div class="row">
+                    {% for service_info in services_info%}
+                        <div class="col-lg-4">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <i class="pe-7s-airplay text-custom"></i>
+                                </div>
+                                <h4 class="text-uppercase service-title mt-3">{{ service_info.title }}</h4>
+                                <p class="text-muted">{{ service_info.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> <!-- end container -->
+</section>

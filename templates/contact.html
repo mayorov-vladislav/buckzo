@@ -1,0 +1,50 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Contact Us</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="MyraStudio" />
+
+        <link rel="shortcut icon" href={% static "images/favicon.ico" %}>
+
+        <!-- Bootstrap Css-->
+        <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css"  %}'/>
+
+        <!-- Materialdesign icon Css-->
+        <link rel="stylesheet" type="text/css" href='{% static "css/icofont.min.css"  %}'/>
+        <!-- Pe 7 icon Css-->
+        <link rel="stylesheet" type="text/css" href='{% static "css/pe-icon-7-stroke.css"  %}'/>
+
+        <!-- Custom Css -->
+        <link rel="stylesheet" type="text/css" href='{% static "css/style.css"  %}'/>
+    
+    </head>
+
+    <body>
+
+        {% include 'include/navbar.html' %}
+
+        {% block content %}
+        {% endblock %}
+
+
+         {% include 'include/footer.html' %} 
+
+
+
+        <!-- JAVASCRIPTS -->
+        <script src={% static "js/jquery-2.1.4.min.js" %}></script>
+        <script src={% static "js/bootstrap.min.js" %}></script>
+        <!-- isotope filter plugin -->
+        <script src={% static "js/isotope.pkgd.min.js" %}></script>
+        <script src={% static "js/portfolio-filter.js" %}></script>
+        <script src={% static "js/app.js" %}></script>
+        
+    </body>
+</html>

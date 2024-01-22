@@ -1,0 +1,15 @@
+<section class="margin-t-50">
+    <div class="container">
+
+            <div class="row margin-t-50">
+                {% for client in clients %}
+                    <div class="col-lg-3">
+                        <div class="client-box">
+                            <img src="{{ client.photo.url }}" class="img-fluid" alt="client-logo">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+    </div> <!-- end container -->
+</section>

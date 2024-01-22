@@ -1,0 +1,60 @@
+<section class="margin-t-30">
+            <div class="container">
+
+                <div class="row margin-t-50">
+                    {% for contact_us in contacts_us %}
+                        <div class="col-lg-4 address-box">
+                            <div>
+                                <h5>Email Address</h5>
+                                <p class="text-muted">{{ contact_us.email_app }}</p>
+                            </div>
+                            <div class="margin-t-30">
+                                <h5>Telephone</h5>
+                                <p class="text-muted">{{ contact_us.phone_app }}</p>
+                            </div>
+                            <div class="margin-t-30">
+                                <h5>Address</h5>
+                                <p class="text-muted">{{ contact_us.address_app }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="col-lg-8">
+                         <form class="form-custom" method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ contact_form.name }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        {{ contact_form.email }}
+                                    </div>
+                                </div>
+
+                            </div>
+                             <div class="col-lg-6">
+                                 <div class="form-group">
+                                     {{ contact_form.subject }}
+                                 </div>
+                             </div>
+                             <div class="col-lg-6">
+                                 <div class="form-group">
+                                     {{ contact_form.message }}
+                                 </div>
+                             </div>
+                            <!-- Остальные поля формы -->
+                            <div class="row">
+                                <div class="col-lg-12 text-right">
+                                    <input type="submit" class="btn btn-dark btn-rounded" value="Send Message">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+
+            </div> <!-- end container -->
+        </section>

@@ -1,0 +1,19 @@
+<section>
+            <div class="container">
+                {% for header in headers %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="page-title text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <h2><span>{{ header.title1 }}</span> {{ header.title2 }}</h2>
+
+                                        <h4 class="subtitle text-muted">{{ header.description }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>

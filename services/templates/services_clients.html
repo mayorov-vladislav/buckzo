@@ -1,0 +1,30 @@
+<section>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-title text-center">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2><span>Our Clients.</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for client in clients %}
+                        <div class="col-lg-3">
+                            <div class="client-box">
+                                <a href="{{ client.link }}" >
+                                    <img src="{{ client.photo.url }}" class="img-fluid" alt="client-logo">
+                                </a>
+                             </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div> <!-- end container -->
+        </section>

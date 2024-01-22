@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+    {% for client in clients %}
+                    <div class="col-lg-8">
+                        <div class="testimonial-box">
+                            <h1 class="mt-4"><i class="pe-7s-chat"></i></h1>
+                            <h4 class="client-comment">{{ client.description }}</h4>
+                            <img src="{{ client.photo.url }}" class="testi-user rounded-circle" alt="testimonials-user">
+                            <p>{{ client.name }}</p>
+                        </div>
+                    </div>
+    {% endfor %}
+</div>

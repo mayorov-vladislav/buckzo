@@ -1,0 +1,31 @@
+<!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+
+                <div class="row">
+                    {% for footer in footers %}
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <a class="pb-2 display-4 mb-0 d-inline-block text-dark" href="{% url 'home' %}"><i
+                                        class="icofont-deer-head"></i></a>
+                                <h4 class="font-weight-bold">BUCKZO</h4>
+    
+                                <ul class="list-inline social-circle margin-t-30">
+                                    <li class="list-inline-item"><a href="{{ footer.envato_link }}"> <i class="icofont-envato"></i> </a></li>
+                                    <li class="list-inline-item"><a href="{{ footer.facebook_link }}"> <i class="icofont-facebook"></i> </a></li>
+                                    <li class="list-inline-item"><a href="{{ footer.skype_link }}"> <i class="icofont-skype"></i> </a></li>
+                                    <li class="list-inline-item"><a href="{{ footer.twitter_link }}"> <i class="icofont-twitter"></i> </a></li>
+                                    <li class="list-inline-item"><a href="{{ footer.whatsapp_link }}"> <i class="icofont-whatsapp"></i> </a></li>
+                                </ul>
+    
+                                <p class="text-muted m-b-0 copyright-txt"> © <script>document.write(new Date().getFullYear())</script> {{ footer.copyright_text }}</p>
+    
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- end row -->
+
+            </div>
+        </footer>
+        <!-- END FOOTER -->
