@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import AboutHeader, Client, Team, MainAboutInfo
+from rest_framework import viewsets
+from .serializers import *
+from .models import *
 
 
 class AboutPage(TemplateView):
@@ -17,3 +19,24 @@ class AboutPage(TemplateView):
         context['teams'] = teams
         context['about_infos'] = about_infos
         return context
+
+
+# ---------------- API ----------------
+class MainAboutApi(viewsets.ModelViewSet):
+    queryset = AboutUs.objects.all()
+    serializer_class = AboutHeaderSerializer
+
+
+class ClientApi(viewsets.ModelViewSet):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
+
+
+class TeamApi(viewsets.ModelViewSet):
+    queryset = Team.objects.all()
+    serializer_class = TeamSerializer
+
+
+class MainAboutInfoApi(viewsets.ModelViewSet):
+    queryset = MainAboutInfo.objects.all()
+    serializer_class = MainAboutInfoSerializer

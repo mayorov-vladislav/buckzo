@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from .models import AboutHeader, Client, Team, MainAboutInfo
+from .models import AboutUs, Client, Team, MainAboutInfo
 
 
-@admin.register(AboutHeader)
-class AboutHeaderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'job1', 'job2', 'char', 'title2')
-    list_editable = ('title', 'job1', 'job2', 'char', 'title2')
+@admin.register(AboutUs)
+class AboutUsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', )
+    list_editable = ('title', )
 
 
 @admin.register(Client)

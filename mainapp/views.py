@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import Header, MainInfo, Work, WorkCategory, Footer
+from rest_framework import viewsets
+from .serializers import *
+from .models import *
 
 
 class IndexPage(TemplateView):
@@ -19,4 +21,31 @@ class IndexPage(TemplateView):
         context['work_categories'] = work_categories
         context['footers'] = footers
         return context
+
+
+# ---------------- API ----------------
+class HeaderApi(viewsets.ModelViewSet):
+    queryset = Header.objects.all()
+    serializer_class = HeaderSerializer
+
+
+class MainInfoApi(viewsets.ModelViewSet):
+    queryset = MainInfo.objects.all()
+    serializer_class = MainInfoSerializer
+
+
+class WorkCategoryApi(viewsets.ModelViewSet):
+    queryset = WorkCategory.objects.all()
+    serializer_class = WorkCategorySerializer
+
+
+class WorkApi(viewsets.ModelViewSet):
+    queryset = Work.objects.all()
+    serializer_class = WorkSerializer
+
+
+class FooterApi(viewsets.ModelViewSet):
+    queryset = Footer.objects.all()
+    serializer_class = FooterSerializer
+
 

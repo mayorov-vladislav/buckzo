@@ -1,15 +1,15 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
+from .models import *
 
-from .models import Header, Work, WorkCategory
 
 admin.site.register(WorkCategory)
 
 
 @admin.register(Header)
 class HeaderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title1', 'title2')
-    list_editable = ('title1', 'title2')
+    list_display = ('id', 'title', )
+    list_editable = ('title', )
 
 
 @admin.register(Work)

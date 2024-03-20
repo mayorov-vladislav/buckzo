@@ -1,10 +1,9 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
 class Header(models.Model):
-    title = models.CharField(max_length=200, verbose_name="Начало заголовка")
-    head_words = models.CharField(max_length=200, verbose_name="Главное слово", blank=True)
-    title2 = models.CharField(max_length=200, verbose_name="Конец заголовка", blank=True)
+    title = RichTextField()
     description = models.TextField(max_length=250, verbose_name="Описание")
 
     class Meta:

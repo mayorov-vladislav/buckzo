@@ -5,8 +5,8 @@ from .models import Header, ServiceInfo, Client
 
 @admin.register(Header)
 class HeaderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'head_words', 'title2')
-    list_editable =('title', 'head_words', 'title2')
+    list_display = ('id', 'title', )
+    list_editable = ('title', )
 
 
 @admin.register(ServiceInfo)

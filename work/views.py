@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import Header, Work, WorkCategory
+from rest_framework import viewsets
+from .serializers import *
+from .models import *
 
 
 class WorksPage(TemplateView):
@@ -15,3 +17,20 @@ class WorksPage(TemplateView):
         context['works'] = works
         context['work_categories'] = work_categories
         return context
+
+
+# --------------- API --------------
+class HeaderWorkApi(viewsets.ModelViewSet):
+    queryset = Header.objects.all()
+    serializer_class = HeaderSerializer
+
+
+class WorkCategoryWorkApi(viewsets.ModelViewSet):
+    queryset = WorkCategory.objects.all()
+    serializer_class = WorkCategorySerializer
+
+
+class WorkWorkApi(viewsets.ModelViewSet):
+    queryset = Work.objects.all()
+    serializer_class = WorkSerializer
+

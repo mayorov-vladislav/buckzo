@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "work.apps.WorkConfig",
     "contact.apps.ContactConfig",
     'ckeditor',
+    'rest_framework',
 ]
 
 CKEDITOR_CONFIG = {

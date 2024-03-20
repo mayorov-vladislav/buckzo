@@ -3,11 +3,7 @@ from django.db import models
 
 
 class Header(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Начало заголовка')
-    job1 = models.CharField(max_length=100, verbose_name='1 Профессия', blank=True)
-    job2 = models.CharField(max_length=100, verbose_name='2 Профессия', blank=True)
-    char = models.CharField(max_length=100, verbose_name='Знак', blank=True)
-    title2 = models.CharField(max_length=100, verbose_name='Конец заголовка', blank=True)
+    title = RichTextField()
     description = models.TextField(max_length=200, verbose_name='Описание')
 
     class Meta:

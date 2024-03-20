@@ -5,8 +5,8 @@ from .models import Header, MainInfo, Work, WorkCategory, Footer
 
 @admin.register(Header)
 class HeaderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'job1', 'job2', 'char', 'title2')
-    list_editable = ('title', 'job1', 'job2', 'char', 'title2')
+    list_display = ('id', 'title')
+    list_editable = ('title', )
 
 
 @admin.register(MainInfo)

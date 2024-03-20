@@ -18,6 +18,35 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from mainapp.views import *
+from about.views import *
+from services.views import *
+from work.views import *
+
+# ---------------ROUTER API SETTINGS---------------
+# ---------------MAIN APP---------------
+router = routers.DefaultRouter()
+router.register(r'api/header', HeaderApi),
+router.register(r'api/main-info', MainInfoApi),
+router.register(r'api/work-category', WorkCategoryApi),
+router.register(r'api/work', WorkApi),
+router.register(r'api/footer', FooterApi),
+# ---------------ABOUT---------------
+router.register(r'api/about-header', MainAboutApi),
+router.register(r'api/client', ClientApi),
+router.register(r'api/team', TeamApi),
+router.register(r'api/main-about-info', MainAboutInfoApi),
+# ---------------SERVICES---------------
+router.register(r'api/services-header', HeaderApi),
+router.register(r'api/services-info', ServiceInfoApi),
+router.register(r'api/services-client', ServicesClientApi),
+# ---------------WORK---------------
+router.register(r'api/work-work', HeaderWorkApi),
+router.register(r'api/work-category', WorkCategoryWorkApi),
+router.register(r'api/work-work', WorkWorkApi),
+# ---------------ROUTER API SETTINGS---------------
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +55,7 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('works/', include('work.urls')),
     path('contact-us/', include('contact.urls')),
+    path('', include(router.urls))
 ]
 
 
