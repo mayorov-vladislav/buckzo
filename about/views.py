@@ -10,7 +10,7 @@ class AboutPage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        about_headers = AboutHeader.objects.all()
+        about_headers = AboutUs.objects.all()
         clients = Client.objects.filter(is_visible=True)
         teams = Team.objects.filter(is_visible=True)
         about_infos = MainAboutInfo.objects.all()
@@ -40,3 +40,5 @@ class TeamApi(viewsets.ModelViewSet):
 class MainAboutInfoApi(viewsets.ModelViewSet):
     queryset = MainAboutInfo.objects.all()
     serializer_class = MainAboutInfoSerializer
+
+

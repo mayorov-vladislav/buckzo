@@ -34,15 +34,15 @@ router.register(r'api/work', WorkApi),
 router.register(r'api/footer', FooterApi),
 # ---------------ABOUT---------------
 router.register(r'api/about-header', MainAboutApi),
-router.register(r'api/client', ClientApi),
-router.register(r'api/team', TeamApi),
+router.register(r'api/about-client', ClientApi),
+router.register(r'api/about-team', TeamApi),
 router.register(r'api/main-about-info', MainAboutInfoApi),
 # ---------------SERVICES---------------
 router.register(r'api/services-header', HeaderApi),
 router.register(r'api/services-info', ServiceInfoApi),
 router.register(r'api/services-client', ServicesClientApi),
 # ---------------WORK---------------
-router.register(r'api/work-work', HeaderWorkApi),
+router.register(r'api/work-header', HeaderWorkApi),
 router.register(r'api/work-category', WorkCategoryWorkApi),
 router.register(r'api/work-work', WorkWorkApi),
 # ---------------ROUTER API SETTINGS---------------
